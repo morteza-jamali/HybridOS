@@ -1,5 +1,8 @@
 import React, { useEffect } from "react";
 import { Text, View, BackHandler } from "react-native";
+import Terminal from './src/Terminal';
+
+Terminal.runCommand('pwd');
 
 const App = () => {
   useEffect(() => {
