@@ -1,90 +1,12 @@
 import 'react-native-gesture-handler';
 import React, { useEffect } from "react";
-import {
-    Text ,
-    View ,
-    BackHandler
-} from "react-native";
-import {
-    Button ,
-    SearchBar
-} from 'react-native-elements';
-import Icon from 'react-native-vector-icons/FontAwesome';
+import { BackHandler } from "react-native";
 import { NavigationContainer } from '@react-navigation/native';
 import { createStackNavigator } from '@react-navigation/stack';
-import Style from './resources/js/style';
+import MainScreen from "./resources/js/component/Main";
+import AppScreen from "./resources/js/component/Applications";
 
 const Stack = createStackNavigator();
-
-const MainScreen = ({ navigation }) => {
-    return (
-        <View style={Style.mainContainer}>
-            <SearchBar placeholder="Type Here..." platform="android" containerStyle={Style.mainPageSearchBar_ContainerStyle} />
-            <View style={Style.bottomNavigationView}>
-                <Button buttonStyle={Style.bottomNavigationButtons}
-                        icon={
-                            <Icon
-                                name="phone"
-                                size={20}
-                                color="white"
-                            />
-                        }
-                />
-                <Button buttonStyle={Style.bottomNavigationButtons}
-                        icon={
-                            <Icon
-                                name="phone"
-                                size={20}
-                                color="white"
-                            />
-                        }
-                />
-                <Button buttonStyle={Style.bottomNavigationMainButton} onPress={() =>
-                    navigation.navigate('Applications')}
-                        icon={
-                            <Icon
-                                name="phone"
-                                size={20}
-                                color="white"
-                            />
-                        }
-                />
-                <Button buttonStyle={Style.bottomNavigationButtons}
-                        icon={
-                            <Icon
-                                name="phone"
-                                size={20}
-                                color="white"
-                            />
-                        }
-                />
-                <Button buttonStyle={Style.bottomNavigationButtons}
-                        icon={
-                            <Icon
-                                name="phone"
-                                size={20}
-                                color="white"
-                            />
-                        }
-                />
-            </View>
-        </View>
-    );
-};
-const AppScreen = ({ navigation }) => {
-    return(
-        <Button buttonStyle={Style.bottomNavigationMainButton} onPress={() =>
-            navigation.navigate('Main')}
-                icon={
-                    <Icon
-                        name="phone"
-                        size={20}
-                        color="white"
-                    />
-                }
-        />
-    );
-};
 
 const App = () => {
   useEffect(() => {
